@@ -44,7 +44,7 @@ services:
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:latest
     container_name: prowlarr
-    depends_on: 
+    depends_on:
       - qbittorrent
     environment:
       - PUID=13010
