@@ -2,8 +2,8 @@
 
 ## uncomment to create directories ##
 
-sudo mkdir -pv /media/data/{torrents,usenet,media}/{anime,anime_adult,tv,movies,music,books,comics,audiobooks,podcasts,audiobookshelf-metadata}
-sudo chmod -R 775 /media/data/
+sudo mkdir -pv /mnt/data/{torrents,usenet,media}/{anime,anime_adult,tv,movies,music,books,comics,audiobooks,podcasts,audiobookshelf-metadata}
+sudo chmod -R 775 /mnt/data/
 
 ## uncomment to add mediacenter group ##
 
@@ -15,7 +15,7 @@ sudo chown -R $(id -u):mediacenter /media/data/
 
 ## 00 ##
 ## Torrent Downloader ##
-sudo useradd qbittorrent -u 13001
+sudo useradd qbittorrent -u 13005
 sudo usermod -a -G mediacenter qbittorrent
 sudo mkdir -pv config/qbittorrent-config
 sudo chown -R qbittorrent:mediacenter config/qbittorrent-config
@@ -23,7 +23,7 @@ sudo chown -R qbittorrent:mediacenter config/qbittorrent-config
 #sudo rm -rf config/qbittorrent-config
 
 ## download nzb's ##
-sudo useradd sabnzbd -u 13002
+sudo useradd sabnzbd -u 13006
 sudo usermod -a -G mediacenter sabnzbd
 sudo mkdir -pv config/sabnzbd-config
 sudo chown -R sabnzbd:mediacenter config/sabnzbd-config
@@ -165,9 +165,9 @@ sudo chown -R jellyseerr:mediacenter config/jellyseerr-config
 #sudo rm -rf config/mylar-config
 
 ## Dashboards ##
-sudo useradd heimdall -u 13080
-sudo usermod -a -G mediacenter heimdall
-sudo mkdir -pv config/heimdall-config
-sudo chown -R heimdall:mediacenter config/heimdall-config
+#sudo useradd heimdall -u 13080
+#sudo usermod -a -G mediacenter heimdall
+#sudo mkdir -pv config/heimdall-config
+#sudo chown -R heimdall:mediacenter config/heimdall-config
 #sudo deluser --remove-home heimdall
 #sudo rm -rf config/heimdall-config

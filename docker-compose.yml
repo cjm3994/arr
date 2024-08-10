@@ -8,15 +8,15 @@ services:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
     environment:
-      - PUID=13001
+      - PUID=13005
       - PGID=13000
       - UMASK=002
       - TZ=Asia/Kuwait
       - WEBUI_PORT=8080
       - TORRENTING_PORT=6881
     volumes:
-      - /home/morris/docker/arr/config/qbittorrent-config:/config
-      - /media/data/torrents:/data/torrents
+      - /home/morris/arr/config/qbittorrent-config:/config
+      - /mnt/data/torrents:/data/torrents
     ports:
       - "8080:8080"
       - "6881:6881"
@@ -28,13 +28,13 @@ services:
     image: lscr.io/linuxserver/sabnzbd:latest
     container_name: sabnzbd
     environment:
-      - PUID=13002
+      - PUID=13006
       - PGID=13000
       - UMASK=002
       - TZ=Asia/Kuwait
     volumes:
-      - /home/morris/docker/arr/config/sabnzbd-config:/config
-      - /media/data/usenet:/data/usenet
+      - /home/morris/arr/config/sabnzbd-config:/config
+      - /mnt/data/usenet:/data/usenet
     ports:
       - "8081:8080"
     restart: unless-stopped
@@ -52,7 +52,7 @@ services:
       - UMASK=002
       - TZ=Asia/Kuwait
     volumes:
-      - /home/morris/docker/arr/config/prowlarr-config:/config
+      - /home/morris/arr/config/prowlarr-config:/config
     ports:
       - "9696:9696"
     restart: unless-stopped
@@ -67,7 +67,7 @@ services:
 #      - UMASK=002
 #      - TZ=Asia/Kuwait
 #    volumes:
-#      - /home/morris/docker/arr/config/prowlarr-config:/config
+#      - /home/morris/arr/config/prowlarr-config:/config
 #    ports:
 #      - "9117:9117"
 #    restart: unless-stopped
@@ -86,8 +86,8 @@ services:
       - UMASK=002
       - TZ=Asia/Kuwait
     volumes:
-      - /home/morris/docker/arr/config/radarr-config:/config
-      - /media/data:/data
+      - /home/morris/arr/config/radarr-config:/config
+      - /mnt/data:/data
     ports:
       - "7878:7878"
     restart: unless-stopped
@@ -105,8 +105,8 @@ services:
       - UMASK=002
       - TZ=Asia/Kuwait
     volumes:
-      - /home/morris/docker/arr/config/radarr_anime-config:/config
-      - /media/data:/data
+      - /home/morris/arr/config/radarr_anime-config:/config
+      - /mnt/data:/data
     ports:
       - "7877:7878"
     restart: unless-stopped
@@ -124,8 +124,8 @@ services:
       - UMASK=002
       - TZ=Asia/Kuwait
     volumes:
-      - /home/morris/docker/arr/config/sonarr-config:/config
-      - /media/data:/data
+      - /home/morris/arr/config/sonarr-config:/config
+      - /mnt/data:/data
     ports:
       - "8989:8989"
     restart: unless-stopped
@@ -143,8 +143,8 @@ services:
       - UMASK=002
       - TZ=Asia/Kuwait
     volumes:
-      - /home/morris/docker/arr/config/sonarr_anime-config:/config
-      - /media/data:/data
+      - /home/morris/arr/config/sonarr_anime-config:/config
+      - /mnt/data:/data
     ports:
       - "8988:8989"
     restart: unless-stopped
@@ -162,8 +162,8 @@ services:
 #      - TZ=Asia/Kuwait
 #      - WEBUI_PORTS=6767/tcp,6767/udp
 #    volumes:
-#      - /home/morris/docker/arr/config/bazarr-config:/config
-#      - /home/morris/docker/arr/data/media:/media
+#      - /home/morris/arr/config/bazarr-config:/config
+#      - /home/morris/arr/data/media:/media
 #    ports:
 #      - "6767:6767"
 #    restart: unless-stopped
@@ -183,8 +183,8 @@ services:
 #    ports:
 #      - " : "
 #    volumes:
-#      - /home/morris/docker/arr/config/plex-config:/config
-#      - /home/morris/docker/arr/data/media:/media
+#      - /home/morris/arr/config/plex-config:/config
+#      - /home/morris/arr/data/media:/media
 #    restart: unless-stopped
 
 ## Show and Movie Request Manager for Plex ##
@@ -199,7 +199,7 @@ services:
 #      - UMASK=002
 #      - TZ=Asia/Kuwait
 #    volumes:
-#      - /home/morris/docker/arr/config/overseerr-config:/config
+#      - /home/morris/arr/config/overseerr-config:/config
 #    ports:
 #      - "5056:5055"
 #    restart: unless-stopped
@@ -215,7 +215,7 @@ services:
 #      - PGID=13000
 #      - TZ=Asia/Kuwait
 #    volumes:
-#      - /home/morris/docker/arr/config/tautulli-config:/config
+#      - /home/morris/arr/config/tautulli-config:/config
 #    ports:
 #      - "8181:8181"
 #    restart: unless-stopped
@@ -231,8 +231,8 @@ services:
       - UMASK=002
       - TZ=Asia/Kuwait
     volumes:
-      - /home/morris/docker/arr/config/jellyfin-config:/config
-      - /media/data/media:/media
+      - /home/morris/arr/config/jellyfin-config:/config
+      - /mnt/data/media:/media
     ports:
       - "8096:8096"
     restart: unless-stopped
@@ -249,7 +249,7 @@ services:
       - UMASK=002
       - TZ=Asia/Kuwait
     volumes:
-      - /home/morris/docker/arr/config/jellyseerr-config:/app/config
+      - /home/morris/arr/config/jellyseerr-config:/app/config
     ports:
       - "5055:5055"
     restart: unless-stopped
@@ -265,8 +265,8 @@ services:
 #      - UMASK=002
 #      - TZ=Asia/Kuwait
 #    volumes:
-#      - /home/morris/docker/arr/config/lidarr-config:/config
-#      - /home/morris/docker/arr/data:/data
+#      - /home/morris/arr/config/lidarr-config:/config
+#      - /home/morris/arr/data:/data
 #    ports:
 #      - "8686:8686"
 #    restart: unless-stopped
@@ -282,8 +282,8 @@ services:
 #      - UMASK=002
 #      - TZ=Asia/Kuwait
 #    volumes:
-#      - /home/morris/docker/arr/config/calibre-config:/config
-#      - /media/data:/data
+#      - /home/morris/arr/config/calibre-config:/config
+#      - /mnt/data:/data
 #    ports:
 #      - 8082:8080
 #      - 8181:8181
@@ -303,8 +303,8 @@ services:
 #      - UMASK=002
 #      - TZ=Asia/Kuwait
 #    volumes:
-#      - /home/morris/docker/arr/config/readarr-config:/config
-#      - /media/data:/data
+#      - /home/morris/arr/config/readarr-config:/config
+#      - /mnt/data:/data
 #    ports:
 #      - "8787:8787"
 #    restart: unless-stopped
@@ -319,24 +319,24 @@ services:
 #      - UMASK=002
 #      - TZ=Asia/Kuwait
 #    volumes:
-#      - /home/morris/docker/arr/config/mylar-config:/config
-#      - /home/morris/docker/arr/data:/data
+#      - /home/morris/arr/config/mylar-config:/config
+#      - /home/morris/arr/data:/data
 #    ports:
 #      - "8090:8090"
 #    restart: unless-stopped
 
 ## 80 ##
 ## Dashboards ##
-  heimdall:
-    image: lscr.io/linuxserver/heimdall:latest
-    container_name: heimdall
-    environment:
-      - PUID=13080
-      - PGID=13000
-      - TZ=Asia/Kuwait
-    volumes:
-      - /home/morris/docker/arr/config/heimdall-config:/config
-    ports:
-      - 80:80
-      - 443:443
-    restart: unless-stopped
+#  heimdall:
+#    image: lscr.io/linuxserver/heimdall:latest
+#    container_name: heimdall
+#    environment:
+#      - PUID=13080
+#      - PGID=13000
+#      - TZ=Asia/Kuwait
+#    volumes:
+#      - /home/morris/arr/config/heimdall-config:/config
+#    ports:
+#      - 80:80
+#      - 443:443
+#    restart: unless-stopped
