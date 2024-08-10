@@ -89,7 +89,7 @@ sudo chown -R sonarr:mediacenter config/sonarr_anime-config
 #sudo rm -rf config/bazarr-config
 
 ##30 ##
-## Media Server ##
+## Plex Media Server ##
 #sudo useradd plex -u 13030
 #sudo usermod -a -G mediacenter plex
 #sudo mkdir -pv config/plex-config
@@ -114,7 +114,7 @@ sudo chown -R sonarr:mediacenter config/sonarr_anime-config
 #sudo rm -rf config/tautulli-config
 
 ## 40 ##
-## Media Server ##
+## Jellyfin Media Server ##
 sudo useradd jellyfin -u 13040
 sudo usermod -a -G mediacenter jellyfin
 sudo mkdir -pv config/jellyfin-config
