@@ -8,7 +8,7 @@ sudo chmod -R 775 /mnt/data/
 ## uncomment to add mediacenter group ##
 
 #sudo groupadd mediacenter -g 13000
-sudo chown -R $(id -u):mediacenter /media/data/
+sudo chown -R $(id -u):mediacenter /mnt/data/
 #sudo groupdel mediacenter
 
 ## uncomment to add needed user ##
